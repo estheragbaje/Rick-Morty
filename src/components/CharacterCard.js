@@ -1,13 +1,14 @@
 import React from "react";
 import Text from "./Text";
 import Image from "./Image";
+import styled from "styled-components";
 
 export default function CharacterCard(props) {
   const { name, location, image, status, species, origin } = props.character;
   return (
     <div>
       <Image src={image} />
-      <Text>{name}</Text>
+      <Text size="big">{name}</Text>
       <Text>
         <span>{species}</span>
         <span>{status}</span>

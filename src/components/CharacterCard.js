@@ -4,14 +4,20 @@ import Image from "./Image";
 import styled from "styled-components";
 
 const StyledCard = styled.div`
-  border-radius: 2px;
+  border: 0.5px solid grey;
+    border-radius: 10px;
+}
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
 `;
 
 export default function CharacterCard(props) {
   const { name, location, image, status, species, origin } = props.character;
   return (
     <StyledCard>
-      <Image src={image} />
+      <StyledImage src={image} />
       <Text size="big" weight="bold">
         {name}
       </Text>

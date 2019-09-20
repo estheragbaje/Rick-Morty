@@ -44,7 +44,7 @@ export default function CharacterList() {
 
   return (
     <div>
-      <SearchForm onSearch={filterList} placeholder="search" />
+      <SearchForm onSearch={filterList} />
       <StyledSection2 className="character-list">
         {characters.map(character => (
           <CharacterCard key={character.id} character={character} />

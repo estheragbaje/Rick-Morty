@@ -11,6 +11,7 @@ export default function CharacterCard(props) {
       <Text size="big">{name}</Text>
       <Text>
         <span>{species}</span>
+        <span> </span>
         <span>{status}</span>
       </Text>
       <Text>Location: {location.name}</Text>

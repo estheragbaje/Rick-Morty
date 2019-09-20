@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
+import styled from "styled-components";
+import SearchForm from "./SearchForm";
+
+const StyledSection2 = styled.section`
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 30px;
+`;
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -23,10 +32,13 @@ export default function CharacterList() {
   }, []);
 
   return (
-    <section className="character-list">
-      {characters.map(character => (
-        <CharacterCard key={character.id} character={character} />
-      ))}
-    </section>
+    <div>
+      <SearchForm />
+      <StyledSection2 className="character-list">
+        {characters.map(character => (
+          <CharacterCard key={character.id} character={character} />
+        ))}
+      </StyledSection2>
+    </div>
   );
 }

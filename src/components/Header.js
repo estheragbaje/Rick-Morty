@@ -1,9 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import SearchForm from "./SearchForm";
 
 export default function Header() {
-  const styling = { textDecoration: "none", fontSize: "18px", color: "black" };
-  const activeStyling = { color: "red", fontWeight: "bold" };
+  const styling = { textDecoration: "none", fontSize: "20px", color: "black" };
+  const activeStyling = {
+    color: "black",
+    fontWeight: "bold",
+    border: "0.2px solid grey"
+  };
 
   return (
     <header className="ui centered">
@@ -14,14 +19,10 @@ export default function Header() {
           justifyContent: "space-evenly"
         }}
       >
-        <NavLink style={styling} activeStyleing={activeStyling} to="/">
+        <NavLink style={styling} activeStyle={activeStyling} to="/">
           Home page
         </NavLink>
-        <NavLink
-          style={styling}
-          activeStyleing={activeStyling}
-          to="/characters"
-        >
+        <NavLink style={styling} activeStyle={activeStyling} to="/characters">
           Characters
         </NavLink>
       </nav>

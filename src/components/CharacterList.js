@@ -14,6 +14,16 @@ const StyledSection2 = styled.section`
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
+  const [initialCharacters, setInitialCharacters] = useState([]);
+
+  const filterList = event => {
+    let items = initialCharacters;
+    items = items.filter(
+      item =>
+        item.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1
+    );
+    setCharacters(items);
+  };
 
   const getCharacter = () => {
     axios
@@ -21,6 +31,7 @@ export default function CharacterList() {
       .then(response => {
         console.log(response.data);
         setCharacters(response.data.results);
+        setInitialCharacters(response.data.results);
       })
       .catch(error => {
         console.error("Server Error", error);
@@ -33,7 +44,7 @@ export default function CharacterList() {
 
   return (
     <div>
-      <SearchForm />
+      <SearchForm onSearch={filterList} placeholder="search" />
       <StyledSection2 className="character-list">
         {characters.map(character => (
           <CharacterCard key={character.id} character={character} />

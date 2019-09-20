@@ -3,10 +3,14 @@ import Text from "./Text";
 import Image from "./Image";
 import styled from "styled-components";
 
+const StyledCard = styled.div`
+  border-radius: 2px;
+`;
+
 export default function CharacterCard(props) {
   const { name, location, image, status, species, origin } = props.character;
   return (
-    <div>
+    <StyledCard>
       <Image src={image} />
       <Text size="big">{name}</Text>
       <Text>
@@ -16,6 +20,6 @@ export default function CharacterCard(props) {
       </Text>
       <Text>Location: {location.name}</Text>
       <Text>Origin: {origin.name}</Text>
-    </div>
+    </StyledCard>
   );
 }

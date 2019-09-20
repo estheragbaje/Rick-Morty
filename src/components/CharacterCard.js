@@ -12,7 +12,9 @@ export default function CharacterCard(props) {
   return (
     <StyledCard>
       <Image src={image} />
-      <Text size="big">{name}</Text>
+      <Text size="big" weight="bold">
+        {name}
+      </Text>
       <Text>
         <span>{species}</span>
         <span> </span>

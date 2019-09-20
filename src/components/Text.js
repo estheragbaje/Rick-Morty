@@ -5,11 +5,11 @@ import styled from "styled-components";
 const Text = styled.p`
   font-size: ${props => {
     if (props.size === "big") {
-      return "2rem";
+      return "1.5rem";
     } else if (props.size === "small") {
-      return "1rem";
+      return "0.6rem";
     } else {
-      return "1.3rem";
+      return "1rem";
     }
   }};
   font-weight: ${props => props.weight};

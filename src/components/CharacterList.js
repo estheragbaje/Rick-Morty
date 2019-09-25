@@ -6,7 +6,7 @@ import SearchForm from "./SearchForm";
 
 const StyledSection2 = styled.section`
   display: grid;
-  grid-gap: 40px;
+  grid-gap: 80px;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 30px;
 `;
@@ -29,7 +29,7 @@ export default function CharacterList() {
     axios
       .get("https://rickandmortyapi.com/api/character/")
       .then(response => {
-        console.log(response.data);
+        // console.log(response.data);
         setCharacters(response.data.results);
         setInitialCharacters(response.data.results);
       })
@@ -39,7 +39,7 @@ export default function CharacterList() {
   };
 
   useEffect(() => {
-    getCharacter();
+    // getCharacter();
   }, []);
 
   return (

@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import CharacterCard from "./CharacterCard";
-import styled from "styled-components";
-import SearchForm from "./SearchForm";
+import { Box, SimpleGrid } from '@chakra-ui/core';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import CharacterCard from './CharacterCard';
+import SearchForm from './SearchForm';
 
-const StyledSection2 = styled.section`
-  display: grid;
-  grid-gap: 80px;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 30px;
-`;
+
 
 export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
   const [initialCharacters, setInitialCharacters] = useState([]);
 
@@ -27,29 +21,28 @@ export default function CharacterList() {
 
   const getCharacter = () => {
     axios
-      .get("https://rickandmortyapi.com/api/character/")
+      .get('https://rickandmortyapi.com/api/character/')
       .then(response => {
-        // console.log(response.data);
         setCharacters(response.data.results);
         setInitialCharacters(response.data.results);
       })
       .catch(error => {
-        console.error("Server Error", error);
+        console.error('Server Error', error);
       });
   };
 
   useEffect(() => {
-    // getCharacter();
+    getCharacter();
   }, []);
 
   return (
-    <div>
+    <Box paddingY="40px">
       <SearchForm onSearch={filterList} />
-      <StyledSection2 className="character-list">
+      <SimpleGrid columns={3} spacing={4}>
         {characters.map(character => (
           <CharacterCard key={character.id} character={character} />
         ))}
-      </StyledSection2>
-    </div>
+      </SimpleGrid>
+    </Box>
   );
 }

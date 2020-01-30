@@ -1,22 +1,25 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import SearchForm from "./SearchForm";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import SearchForm from './SearchForm';
+import { Heading } from '@chakra-ui/core';
 
 export default function Header() {
-  const styling = { textDecoration: "none", fontSize: "20px", color: "black" };
+  const styling = { textDecoration: 'none', fontSize: '20px', color: 'black' };
   const activeStyling = {
-    color: "black",
-    fontWeight: "bold",
-    border: "0.2px solid grey"
+    color: 'black',
+    fontWeight: 'bold',
+    border: '0.2px solid grey'
   };
 
   return (
     <header className="ui centered">
-      <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
+      <Heading textAlign="center" paddingY="20px">
+        Rick & Morty Fan Page
+      </Heading>
       <nav
         style={{
-          display: "flex",
-          justifyContent: "space-evenly"
+          display: 'flex',
+          justifyContent: 'space-evenly'
         }}
       >
         <NavLink style={styling} activeStyle={activeStyling} to="/">

@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React from 'react';
+import { Input, Box } from '@chakra-ui/core';
 
 export default function SearchForm(props) {
   return (
-    <section className="search-form">
-      <input type="search" onChange={props.onSearch} placeholder="search" />
-    </section>
+    <Box paddingY="20px">
+      <Input
+        type="search"
+        onChange={props.onSearch}
+        placeholder="search character"
+        variant="outline"
+      />
+    </Box>
   );
 }

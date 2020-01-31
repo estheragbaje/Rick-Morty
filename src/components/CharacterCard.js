@@ -15,7 +15,8 @@ export default function CharacterCard(props) {
     >
       <Image src={image} objectFit="cover" width="100%" />
       <Box
-        bg="yellow.100"
+        // bg="yellow.100"
+        bg="#8bcf21"
         paddingY="20px"
         paddingX="30px"
         flex={1}

@@ -13,13 +13,15 @@ export default function Header() {
 
   return (
     <header className="ui centered">
-      <Heading textAlign="center" paddingY="20px">
+      <Heading textAlign="center" paddingY="20px" color="#2f9331">
         Rick & Morty Fan Page
       </Heading>
       <nav
         style={{
           display: 'flex',
-          justifyContent: 'space-evenly'
+          justifyContent: 'space-evenly',
+          padding: "20px",
+          borderColor: "#FFFFFF"
         }}
       >
         <NavLink style={styling} activeStyle={activeStyling} to="/">
